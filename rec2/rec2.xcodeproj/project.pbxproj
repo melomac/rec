@@ -11,6 +11,7 @@
 		445425771889276A00990F9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 445425761889276A00990F9D /* main.m */; };
 		44710A4018892796008157A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44710A3E18892796008157A4 /* AVFoundation.framework */; };
 		44710A4618892881008157A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44710A4518892881008157A4 /* AppDelegate.m */; };
+		44FAAE5E19BF5AD600C6D9E6 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FAAE5D19BF5AD600C6D9E6 /* ApplicationServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		44710A3E18892796008157A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		44710A4418892881008157A4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		44710A4518892881008157A4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		44FAAE5D19BF5AD600C6D9E6 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			files = (
 				445425741889276A00990F9D /* Foundation.framework in Frameworks */,
 				44710A4018892796008157A4 /* AVFoundation.framework in Frameworks */,
+				44FAAE5E19BF5AD600C6D9E6 /* ApplicationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 			children = (
 				445425731889276A00990F9D /* Foundation.framework */,
 				44710A3E18892796008157A4 /* AVFoundation.framework */,
+				44FAAE5D19BF5AD600C6D9E6 /* ApplicationServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

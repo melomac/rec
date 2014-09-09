@@ -32,12 +32,17 @@ int main_ap(int argc, char *argv[])
 	// Parse options
 	int arg;
 	
-	while ((arg = getopt(argc, argv, "ahi:lo:p:")) != -1)
+	while ((arg = getopt(argc, argv, "ad:hi:lo:p:")) != -1)
 	{
 		switch (arg)
 		{
 			case 'a':
 				[rec useDefaults];
+				break;
+				
+			case 'd':
+				if ([rec addInputWithDisplayIndex:(NSUInteger)strtoul(optarg, NULL, 10)] == NO)
+					fprintf(stderr, "Warning: Display %s can't be added.\n", optarg);
 				break;
 				
 			case 'h':
@@ -63,6 +68,17 @@ int main_ap(int argc, char *argv[])
 						printf("%2d: %s (*)\n", (int)index, [device UTF8String]);
 					else
 						printf("%2d: %s\n", (int)index, [device UTF8String]);
+				}];
+				
+				// List displays
+				printf("Displays:\n");
+				
+				[rec enumerateDisplaysUsingBlock:^(NSString *display, BOOL isDefault, NSUInteger index) {
+					
+					if (isDefault)
+						printf("%2d: %s (*)\n", (int)index, [display UTF8String]);
+					else
+						printf("%2d: %s\n", (int)index, [display UTF8String]);
 				}];
 				
 				// List presets

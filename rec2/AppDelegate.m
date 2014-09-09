@@ -1,6 +1,9 @@
 #import <AVFoundation/AVFoundation.h>
+#import <ApplicationServices/ApplicationServices.h>
 
 #import "AppDelegate.h"
+
+#define MAX_DISPLAYS 32
 
 
 @interface AppDelegate () <AVCaptureFileOutputRecordingDelegate>
@@ -72,6 +75,27 @@
 	return YES;
 }
 
+- (BOOL)addInputWithDisplayIndex:(NSUInteger)index
+{
+	// Get displays
+	CGDirectDisplayID displays[MAX_DISPLAYS];
+	uint32_t numDisplays;
+	
+	CGGetActiveDisplayList(MAX_DISPLAYS, displays, &numDisplays);
+	
+	if (index >= (NSUInteger)numDisplays)
+		return NO;
+	
+	AVCaptureScreenInput *input = [[AVCaptureScreenInput alloc] initWithDisplayID:displays[index]];
+	
+	if (!input)
+		return NO;
+	
+	[_session addInput:input];
+	
+	return YES;
+}
+
 - (NSArray *)devices
 {
 	NSMutableArray *result = [[NSMutableArray alloc] init];
@@ -111,6 +135,32 @@
 		block([device localizedName], [defaults containsObject:device], index);
 		
 		index++;
+	}
+}
+
+- (void)enumerateDisplaysUsingBlock:(void (^)(NSString *display, BOOL isDefault, NSUInteger index))block
+{
+	if (!block)
+		return;
+	
+	// Get displays
+	CGDirectDisplayID displays[MAX_DISPLAYS];
+	uint32_t numDisplays;
+	
+	CGGetActiveDisplayList(MAX_DISPLAYS, displays, &numDisplays);
+	
+	// Enumerate
+	NSUInteger index = 0;
+	
+	for(index = 0; index < (NSUInteger)numDisplays; index++)
+	{
+		long w = 0, h = 0;
+		w = CGDisplayPixelsWide(displays[index]);
+		h = CGDisplayPixelsHigh(displays[index]);
+		
+		NSString *res = [NSString stringWithFormat:@"%ld x %ld", w, h];
+		
+		block(res, displays[index] == kCGDirectMainDisplay, index);
 	}
 }
 
