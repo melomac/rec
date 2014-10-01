@@ -38,10 +38,10 @@ AV input recorder for legacy platforms.
 
 AV input recorder for current platforms.
 
-* OS X 10.7 and later
-* x86_64
+* iOS 4.0 and later
+* armv6 / armv7
 * AVFoundation, ObjC 2.0, ARC, GCD
-* Build with Xcode 4.6.3
+* Build with Xcode 4.4.1 and iOSOpenDev 1.6-2
 
 ### Usage
 
