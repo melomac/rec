@@ -151,6 +151,6 @@ int main_ap(int argc, char *argv[])
 
 void usage()
 {
-	fprintf(stderr, "Usage: rec2 [-a] [-i index] [-o file] [-p index]\n");
+	fprintf(stderr, "Usage: rec2 [-a] [-d index] [-i index] [-o file] [-p index]\n");
 	fprintf(stderr, "       rec2 -l\n");
 }
