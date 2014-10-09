@@ -181,7 +181,7 @@
 
 - (NSArray *)presets
 {
-	NSArray *result = [NSArray arrayWithObjects:AVCaptureSessionPresetHigh, AVCaptureSessionPresetMedium, AVCaptureSessionPresetLow, nil];
+	NSArray *result = @[AVCaptureSessionPresetPhoto, AVCaptureSessionPresetHigh, AVCaptureSessionPreset1280x720, AVCaptureSessionPreset640x480, AVCaptureSessionPresetMedium, AVCaptureSessionPresetLow];
 	
 	return result;
 }
