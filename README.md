@@ -36,7 +36,7 @@ AV input recorder for legacy platforms.
 
 ## [rec]<sup>2</sup>
 
-AV input recorder for current platforms.
+AV input and display recorder for current platforms.
 
 * OS X 10.7 and later
 * x86_64
@@ -45,7 +45,7 @@ AV input recorder for current platforms.
 
 ### Usage
 
-    Usage: rec2 [-a] [-i index] [-o file] [-p index]
+    Usage: rec2 [-a] [-d index] [-i index] [-o file] [-p index]
            rec2 -l
 
 ### Options
@@ -59,6 +59,7 @@ AV input recorder for current platforms.
                 -o /tmp/yyyyMMdd-HHmmss.mov
                 -p 0 (high)
     
+    -d  add display with index
     -i  add device with index
     -o  set output file
     -p  set preset with index
