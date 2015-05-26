@@ -53,6 +53,7 @@ AV input and display recorder for current platforms.
     -h  show usage
     
     -l  list devices: index, name, and default status (*)
+        list displays: index, resolution, and main status (*)
         list presets: index, name
     
     -a  auto:   -i default audio input
